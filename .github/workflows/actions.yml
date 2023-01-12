@@ -1,5 +1,5 @@
 
-
+name: my chaotic actions
 on: [ push ]
 
 jobs:
