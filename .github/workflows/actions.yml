@@ -1,5 +1,5 @@
 
-name: Create issue on commit
+name: My chaotic actions
 
 on: [ push ]
 
@@ -8,7 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       issues: write 
-    steps:
+    steps: 
+      - name: Push random file
+        run: |
+          pwd
+          ls -a
       - name: Create issue using REST API
         run: |
           curl --request POST \
