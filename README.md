@@ -1,2 +1,2 @@
 # ActionsTests
-For testing GHB actions
+For testing GHB actions.
