@@ -14,11 +14,11 @@ jobs:
           GPG_KEY_PASS: ${{ secrets.GPG_KEY_PASS}}
       - name: Prin out file content
         run: cat $HOME/secrets.json
-  create_issue:
-    runs-on: ubuntu-latest
-    permissions:
-      issues: write 
-    steps: 
+#   create_issue:
+#     runs-on: ubuntu-latest
+#     permissions:
+#       issues: write 
+#     steps: 
 #       - name: Push random file
 #         run: |
 #           pwd
