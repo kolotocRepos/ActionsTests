@@ -25,3 +25,4 @@ jobs:
           export TF_VAR_confluent_cloud_api_secret="${{ secrets.CONFLUENT_CLOUD_API_KEY_ZVFS3GCRAYMYT7J5 }}"
           terraform validate
           terraform plan
+          terraform apply -auto-approve
