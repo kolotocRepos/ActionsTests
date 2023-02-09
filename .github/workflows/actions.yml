@@ -1,49 +1,49 @@
 
-name: My chaotic actions
+# name: My chaotic actions
 
-on: [ push ]
+# on: [ push ]
 
-jobs:
-  decrypt:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - name: Decrypt file
-        run: gpg --quiet --batch --yes --decrypt --passphrase="$GPG_KEY_PASS" --output $HOME/secret.json keys.gpg.gpg
-        env:
-          GPG_KEY_PASS: ${{ secrets.GPG_KEY_PASS}}
-      - name: Prin out file content
-        run: cat $HOME/secret.json
-#   create_issue:
+# jobs:
+#   decrypt:
 #     runs-on: ubuntu-latest
-#     permissions:
-#       issues: write 
-#     steps: 
-#       - name: Push random file
-#         run: |
-#           pwd
-#           ls -a
-#           git init
-#           git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
-#           git config --global user.email "my-bot@bot.com"
-#           git config --global user.name "my-bot"
-#           git fetch
-#           git checkout main
-#           git branch --set-upstream-to=origin/main
-#           git pull
-#           ls -a
-#           echo $RANDOM >> random.txt
-#           git add -A
-#           git commit -m "Random file"
-#           git push
-#       - name: Create issue using REST API
-#         run: |
-#           curl --request POST \
-#           --url https://api.github.com/repos/${{ github.repository }}/issues \
-#           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-#           --header 'content-type: application/json' \
-#           --data '{
-#             "title": "Automated issue for commit: ${{ github.sha }}",
-#             "body": "This issue was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _${{ github.sha }}_."
-#             }' \
-#           --fail
+#     steps:
+#       - uses: actions/checkout@v1
+#       - name: Decrypt file
+#         run: gpg --quiet --batch --yes --decrypt --passphrase="$GPG_KEY_PASS" --output $HOME/secret.json keys.gpg.gpg
+#         env:
+#           GPG_KEY_PASS: ${{ secrets.GPG_KEY_PASS}}
+#       - name: Prin out file content
+#         run: cat $HOME/secret.json
+# #   create_issue:
+# #     runs-on: ubuntu-latest
+# #     permissions:
+# #       issues: write 
+# #     steps: 
+# #       - name: Push random file
+# #         run: |
+# #           pwd
+# #           ls -a
+# #           git init
+# #           git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
+# #           git config --global user.email "my-bot@bot.com"
+# #           git config --global user.name "my-bot"
+# #           git fetch
+# #           git checkout main
+# #           git branch --set-upstream-to=origin/main
+# #           git pull
+# #           ls -a
+# #           echo $RANDOM >> random.txt
+# #           git add -A
+# #           git commit -m "Random file"
+# #           git push
+# #       - name: Create issue using REST API
+# #         run: |
+# #           curl --request POST \
+# #           --url https://api.github.com/repos/${{ github.repository }}/issues \
+# #           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+# #           --header 'content-type: application/json' \
+# #           --data '{
+# #             "title": "Automated issue for commit: ${{ github.sha }}",
+# #             "body": "This issue was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _${{ github.sha }}_."
+# #             }' \
+# #           --fail
