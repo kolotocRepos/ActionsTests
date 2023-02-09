@@ -8,4 +8,5 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Test Terraform
-        run: terraform version 
+        run: terraform version
+        run: echo "$CONFLUENT_CLOUD_API_KEY_ZVFS3GCRAYMYT7J5"
