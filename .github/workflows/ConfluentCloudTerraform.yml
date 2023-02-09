@@ -8,6 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Test Terraform
-        run: |
-          terraform version
-          echo "$CONFLUENT_CLOUD_API_KEY_ZVFS3GCRAYMYT7J5"
+      - run: |
+         terraform version
+         echo "$CONFLUENT_CLOUD_API_KEY_ZVFS3GCRAYMYT7J5"
