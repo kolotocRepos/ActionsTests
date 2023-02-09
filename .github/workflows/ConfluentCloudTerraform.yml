@@ -1,16 +1,11 @@
-
-name: My chaotic actions
+name: Confluent Terraform
 
 on: [ push ]
 
 jobs:
-  decrypt:
+  Terraform:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: Decrypt file
-        run: gpg --quiet --batch --yes --decrypt --passphrase="$GPG_KEY_PASS" --output $HOME/secret.json keys.gpg.gpg
-        env:
-          GPG_KEY_PASS: ${{ secrets.GPG_KEY_PASS}}
-      - name: Prin out file content
-        run: cat $HOME/secret.json
+      - uses: actions/checkout
+      - name: Test Terraform
+        run: terraform version 
