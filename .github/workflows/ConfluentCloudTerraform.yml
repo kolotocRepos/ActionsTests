@@ -11,13 +11,11 @@ jobs:
         run: |
           terraform version
           git clone https://github.com/confluentinc/terraform-provider-confluent.git
-          
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
           # terraform_version: 0.13.0:
-          cli_config_credentials_token: ${{ secrets.CONFLUENT_CLOUD_API_KEY_ZVFS3GCRAYMYT7J5 }}
-          
+          cli_config_credentials_token: ${{ secrets.CONFLUENT_CLOUD_API_KEY_ZVFS3GCRAYMYT7J5 }}          
       - name: Terraform Init
         id: init
         run: terraform init
