@@ -19,8 +19,9 @@ jobs:
       - name: Terraform Init
         id: init
         run: |
-          cd terraform-provider-confluent/examples/configurations
+          cd terraform-provider-confluent/examples/configurations/standard-kafka-rbac
           terraform init
           export TF_VAR_confluent_cloud_api_key="ZVFS3GCRAYMYT7J5"
           export TF_VAR_confluent_cloud_api_secret="${{ secrets.CONFLUENT_CLOUD_API_KEY_ZVFS3GCRAYMYT7J5 }}"
           terraform validate
+          terraform plan
