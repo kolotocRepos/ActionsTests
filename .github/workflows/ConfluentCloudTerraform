@@ -1,0 +1,10 @@
+name: Confluent Terraform
+on: [ push ]
+
+jobs:
+  Terraform:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout
+      - name: Test Terraform
+        run: terraform version 
