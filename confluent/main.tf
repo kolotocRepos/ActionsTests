@@ -23,7 +23,7 @@ resource "confluent_kafka_cluster" "basic" {
   display_name = "inventory"
   availability = "SINGLE_ZONE"
   cloud        = "AZURE"
-  region       = "	germanywestcentral"
+  region       = "germanywestcentral"
   standard {}
   environment {
     id = confluent_environment.Terraform_Test.id
