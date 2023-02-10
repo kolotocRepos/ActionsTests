@@ -1,19 +1,20 @@
 
-# name: My chaotic actions
+name: My chaotic actions
 
-# on: [ push ]
+on: 
+  workflow_dispatch:
 
-# jobs:
-#   decrypt:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v1
-#       - name: Decrypt file
-#         run: gpg --quiet --batch --yes --decrypt --passphrase="$GPG_KEY_PASS" --output $HOME/secret.json keys.gpg.gpg
-#         env:
-#           GPG_KEY_PASS: ${{ secrets.GPG_KEY_PASS}}
-#       - name: Prin out file content
-#         run: cat $HOME/secret.json
+jobs:
+  decrypt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Decrypt file
+        run: gpg --quiet --batch --yes --decrypt --passphrase="$GPG_KEY_PASS" --output $HOME/secret.json keys.gpg.gpg
+        env:
+          GPG_KEY_PASS: ${{ secrets.GPG_KEY_PASS}}
+      - name: Prin out file content
+        run: cat $HOME/secret.json
 # #   create_issue:
 # #     runs-on: ubuntu-latest
 # #     permissions:
